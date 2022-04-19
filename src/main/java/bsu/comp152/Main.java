@@ -37,14 +37,15 @@ public class Main extends Application {
         //Create Circle
         Circle circle = new Circle(20, Paint.valueOf("Black"));
 
-        //Create a Hbox
-        HBox moveColorText = new HBox(enterColor, textField, button, circle);
+        //Create a Hbox and VBox
+        HBox moveColorText = new HBox(10, enterColor, textField);
+        moveColorText.setAlignment(Pos.TOP_CENTER);
+        VBox SceneSteup = new VBox(10, moveColorText, button, circle);
 
-
-        // Setup Hbox
-        Scene scene = new Scene(moveColorText, 400, 300);
-        moveColorText.setAlignment(Pos.TOP_LEFT);
-        moveColorText.setSpacing(20);
+        // Setup Scene
+        Scene scene = new Scene(SceneSteup, 400, 300);
+        SceneSteup.setAlignment(Pos.TOP_CENTER);
+        SceneSteup.setPadding(new Insets(20,0, 0,0));
 
 
         // Add scene to the stage
