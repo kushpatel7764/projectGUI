@@ -35,7 +35,7 @@ public class Main extends Application {
         Button button = new Button("Change Color");
 
         //Create Circle
-        Circle circle = new Circle(20, Paint.valueOf("Black"));
+        Circle circle = new Circle(100, Paint.valueOf("Black"));
 
         //Create a Hbox and VBox
         HBox moveColorText = new HBox(10, enterColor, textField);
