@@ -16,26 +16,29 @@ import javafx.stage.Stage;
 
 
 public class Main extends Application {
+    private Circle circle;
+    private TextField textField;
     public static void main(String[] args) {
-
         // launch the application
         launch(args);
     }
 
     @Override
-    public void start(Stage primaryStage){
+    public void start(Stage primaryStage) {
         // Create a label
         Label enterColor = new Label("Enter a color:");
         enterColor.setFont(Font.font(18));
         // Create TextField
-        TextField textField = new TextField(); // Book page num 787
+        textField = new TextField(); // Book page num 787
 
+        //Create Circle
+        circle = new Circle(100, Paint.valueOf("Black"));
 
         // Create Button
         Button button = new Button("Change Color");
+        button.setOnAction(new BoxClicker());
 
-        //Create Circle
-        Circle circle = new Circle(100, Paint.valueOf("Black"));
+
 
         //Create a Hbox and VBox
         HBox moveColorText = new HBox(10, enterColor, textField);
@@ -45,7 +48,7 @@ public class Main extends Application {
         // Setup Scene
         Scene scene = new Scene(SceneSteup, 400, 300);
         SceneSteup.setAlignment(Pos.TOP_CENTER);
-        SceneSteup.setPadding(new Insets(20,0, 0,0));
+        SceneSteup.setPadding(new Insets(20, 0, 0, 0));
 
 
         // Add scene to the stage
@@ -56,7 +59,12 @@ public class Main extends Application {
 
         // Show the window
         primaryStage.show();
-
     }
+    class BoxClicker implements EventHandler<ActionEvent>{
+        @Override
 
+        public void handle (ActionEvent event){
+            circle.setFill(Paint.valueOf(textField.getText()));
+        }
+    }
 }
