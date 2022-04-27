@@ -55,7 +55,7 @@ public class Main extends Application {
         primaryStage.setScene(scene);
 
         // Set the stage title
-        primaryStage.setTitle("Color changer");
+        primaryStage.setTitle("GUI with Circle");
 
         // Show the window
         primaryStage.show();
